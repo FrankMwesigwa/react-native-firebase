@@ -1,13 +1,18 @@
-import Firebase from 'firebase';
+import * as firebase from 'firebase';
+import firestore from 'firebase/firestore'
 
- let config = {
+const settings = {timestampsInSnapshots: true};
+
+const config = {
     apiKey: "AIzaSyDfuYEFnTvM6EaLcnbajYAeDj3ESk_Ly5M",
     authDomain: "malazi-2d3be.firebaseapp.com",
     databaseURL: "https://malazi-2d3be.firebaseio.com",
     projectId: "malazi-2d3be",
     storageBucket: "malazi-2d3be.appspot.com",
     messagingSenderId: "412162271882"
-  };
+};
+firebase.initializeApp(config);
 
-let app = Firebase.initializeApp(config);
-export const db = app.database();
+firebase.firestore().settings(settings);
+
+export default firebase;
