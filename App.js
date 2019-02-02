@@ -1,37 +1,23 @@
 
-import React from 'react';
+import React, {Component} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { createStackNavigator } from 'react-navigation';
 
-import BoardScreen from './src/screens/BoardScreen';
-import BoardDetailScreen from './src/screens/BoardDetailScreen';
-import AddBoardScreen from './src/screens/BoardAddScreen';
-import EditBoardScreen from './src/screens/BoardEditScreen';
+import Nav from './src/Nav/nav';
+import Generator from './src/Gen/generator';
 
-const RootStack = createStackNavigator(
-  {
-    Board: BoardScreen,
-    BoardDetails: BoardDetailScreen,
-    AddBoard: AddBoardScreen,
-    EditBoard: EditBoardScreen,
-  },
-  {
-    initialRouteName: 'Board',
-    navigationOptions: {
-      headerStyle: {
-        backgroundColor: '#777777',
-      },
-      headerTintColor: '#fff',
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
-    },
-  },
-);
+class App extends Component{
 
-export default class App extends React.Component {
-  render() {
-    return <RootStack />;
+  state = {
+    appname : "My awesome Killer App !!"
+  }
+
+  render(){
+    return(
+      <View style={styles.container}>
+          <Nav name={this.state.appname} />
+          <Generator />
+      </View>
+    )
   }
 }
 
@@ -40,6 +26,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
+    justifyContent: 'flex-start',
+    marginTop: 20
+  }
 });
+
+export default App
