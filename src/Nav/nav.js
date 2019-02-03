@@ -9,7 +9,6 @@ const Nav = (props) => (
 
 const styles = StyleSheet.create({
     nav: {
-      flex: 1,
       backgroundColor: '#eaeaea',
       alignItems: 'center',
       padding: 10,
