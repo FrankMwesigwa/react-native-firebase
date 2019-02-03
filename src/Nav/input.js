@@ -40,6 +40,7 @@ class Input extends Component{
                     ))
                 }
             </View>
+            
         )
     }
 }
