@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 
 import Nav from './src/Nav/nav';
 import Input from './src/Nav/input';
+import Language from './src/Nav/picker';
 import Generator from './src/Gen/generator';
 import ListItem from './src/Gen/listItem';
 
@@ -39,7 +40,8 @@ class App extends Component{
             <View style={styles.wrapper}>
               <Generator add={this.onAddRandom} />
               <ListItem items={this.state.random} delete={this.onItemDelete}/>
-              <Input />
+              {/*<Input />*/}
+              <Language/>
             </View>
           </ScrollView>
       </View>
